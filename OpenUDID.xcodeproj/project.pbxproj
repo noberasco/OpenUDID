@@ -1,0 +1,277 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D97D64F0165540F500CFEABF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D97D64EF165540F500CFEABF /* Foundation.framework */; };
+		D97D65091655435E00CFEABF /* ZKOpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = D97D65081655435E00CFEABF /* ZKOpenUDID.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D97D64EA165540F500CFEABF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D97D64EC165540F500CFEABF /* libOpenUDID.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOpenUDID.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D97D64EF165540F500CFEABF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D97D64F3165540F500CFEABF /* OpenUDID-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OpenUDID-Prefix.pch"; sourceTree = "<group>"; };
+		D97D65071655435E00CFEABF /* ZKOpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKOpenUDID.h; sourceTree = SOURCE_ROOT; };
+		D97D65081655435E00CFEABF /* ZKOpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKOpenUDID.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D97D64E9165540F500CFEABF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D97D64F0165540F500CFEABF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D97D64E1165540F500CFEABF = {
+			isa = PBXGroup;
+			children = (
+				D97D64F1165540F500CFEABF /* OpenUDID */,
+				D97D64EE165540F500CFEABF /* Frameworks */,
+				D97D64ED165540F500CFEABF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D97D64ED165540F500CFEABF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D97D64EC165540F500CFEABF /* libOpenUDID.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D97D64EE165540F500CFEABF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D97D64EF165540F500CFEABF /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D97D64F1165540F500CFEABF /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				D97D65071655435E00CFEABF /* ZKOpenUDID.h */,
+				D97D65081655435E00CFEABF /* ZKOpenUDID.m */,
+				D97D64F2165540F500CFEABF /* Supporting Files */,
+			);
+			path = OpenUDID;
+			sourceTree = "<group>";
+		};
+		D97D64F2165540F500CFEABF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D97D64F3165540F500CFEABF /* OpenUDID-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D97D64EB165540F500CFEABF /* OpenUDID */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D97D64FA165540F500CFEABF /* Build configuration list for PBXNativeTarget "OpenUDID" */;
+			buildPhases = (
+				D97D64E8165540F500CFEABF /* Sources */,
+				D97D64E9165540F500CFEABF /* Frameworks */,
+				D97D64EA165540F500CFEABF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenUDID;
+			productName = OpenUDID;
+			productReference = D97D64EC165540F500CFEABF /* libOpenUDID.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D97D64E3165540F500CFEABF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = thorin;
+			};
+			buildConfigurationList = D97D64E6165540F500CFEABF /* Build configuration list for PBXProject "OpenUDID" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D97D64E1165540F500CFEABF;
+			productRefGroup = D97D64ED165540F500CFEABF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D97D64EB165540F500CFEABF /* OpenUDID */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D97D64E8165540F500CFEABF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D97D65091655435E00CFEABF /* ZKOpenUDID.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D97D64F8165540F500CFEABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D97D64F9165540F500CFEABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D97D64FB165540F500CFEABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/OpenUDID.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenUDID-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+			};
+			name = Debug;
+		};
+		D97D64FC165540F500CFEABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/OpenUDID.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenUDID-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+			};
+			name = Release;
+		};
+		D97D6501165541E900CFEABF /* Release_armv6 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release_armv6;
+		};
+		D97D6502165541E900CFEABF /* Release_armv6 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = armv6;
+				DSTROOT = /tmp/OpenUDID.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OpenUDID-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = armv6;
+			};
+			name = Release_armv6;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D97D64E6165540F500CFEABF /* Build configuration list for PBXProject "OpenUDID" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D97D64F8165540F500CFEABF /* Debug */,
+				D97D64F9165540F500CFEABF /* Release */,
+				D97D6501165541E900CFEABF /* Release_armv6 */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D97D64FA165540F500CFEABF /* Build configuration list for PBXNativeTarget "OpenUDID" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D97D64FB165540F500CFEABF /* Debug */,
+				D97D64FC165540F500CFEABF /* Release */,
+				D97D6502165541E900CFEABF /* Release_armv6 */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D97D64E3165540F500CFEABF /* Project object */;
+}
