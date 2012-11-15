@@ -42,7 +42,7 @@
     // https://img.skitch.com/20120717-g3ag5h9a6ehkgpmpjiuen3qpwp.png
 #endif
 
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
 #import "ZKOpenUDID.h"
 #import <CommonCrypto/CommonDigest.h> // Need to import for CC_MD5 access
@@ -54,8 +54,8 @@
 #endif
 
 #define OpenUDIDLog(fmt, ...)
-//#define OpenUDIDLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
-//#define OpenUDIDLog(fmt, ...) NSLog((@"[Line %d] " fmt), __LINE__, ##__VA_ARGS__);
+//#define OpenUDIDLog(...) NSLog(__VA_ARGS__)
+
 
 static NSString * kOpenUDIDSessionCache = nil;
 static NSString * const kOpenUDIDDescription = @"OpenUDID_with_iOS6_Support";
@@ -117,53 +117,12 @@ static int const kOpenUDIDRedundancySlots = 100;
     
     NSString* _openUDID = nil;
     
-    // August 2011: One day, this may no longer be allowed in iOS. When that is, just comment this line out.
-    // March 25th 2012: this day has come, let's remove this "outlawed" call...
-    // August 2012: well, perhaps much ado about nothing; in any case WWDC2012 gave us something to work with; read below
-#if TARGET_OS_IPHONE	
-//    if([UIDevice instancesRespondToSelector:@selector(uniqueIdentifier)]){
-//        _openUDID = [[UIDevice currentDevice] uniqueIdentifier];
-//    }
-#endif
-    
-    //
-    // !!!!! IMPORTANT README !!!!!
-    //
-    // August 2012: iOS 6 introduces new APIs that help us deal with the now deprecated [UIDevice uniqueIdentifier]
-    // Since iOS 6 is still pre-release and under NDA, the following piece of code is meant to produce an error at
-    // compile time. Accredited developers integrating OpenUDID are expected to review the iOS 6 release notes and
-    // documentation, and replace the underscore ______ in the last part of the selector below with the right
-    // selector syntax as described here (make sure to use the right one! last word starts with the letter "A"):
-    // https://developer.apple.com/library/prerelease/ios/#documentation/UIKit/Reference/UIDevice_Class/Reference/UIDevice.html
-    //
-    // The semantic compiler warnings are still normal if you are compiling for iOS 5 only since Xcode will not
-    // know about the two instance methods used on that line; the code running on iOS will work well at run-time.
-    // Either way, it's time that you junped on the iOS 6 bandwagon and start testing your code on iOS 6 ;-)
-    //
-    // WHAT IS THE SIGNIFICANCE OF THIS CHANGE?
-    //
-    // Essentially, this means that OpenUDID will keep on behaving the same way as before for existing users or
-    // new users in iOS 5 and before. For new users on iOS 6 and after, the new official public APIs will take over.
-    // OpenUDID will therefore be obsoleted when iOS reaches significant adoption, anticipated around mid-2013.
-
-    /*
-
-        September 14; ok, new development. The alleged API has moved!
-        This part of the code will therefore be updated when iOS 6 is actually released.
-        Nevertheless, if you want to go ahead, the code should be pretty easy to
-        guess... it involves including a .h file from a nine-letter framework that ends
-        with the word "Support", and then assigning _openUDID with the only identifier method called on the sharedManager of that new class... don't forget to add
-        the framework to your project!
-     
 #if TARGET_OS_IPHONE
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
-        _openUDID = [[[UIDevice currentDevice] identifierForA_______] UUIDString];
-# error                                                         ^ read comments above, fix accordingly, and remove this #error line
+    if (IOS_VERSION >= 6.0) {
+        _openUDID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     }
 #endif
-    
-     */
-    
+  
     // Next we generate a UUID.
     // UUIDs (Universally Unique Identifiers), also known as GUIDs (Globally Unique Identifiers) or IIDs
     // (Interface Identifiers), are 128-bit values guaranteed to be unique. A UUID is made unique over 
@@ -187,16 +146,11 @@ static int const kOpenUDIDRedundancySlots = 100;
                 result[4], result[5], result[6], result[7],
                 result[8], result[9], result[10], result[11],
                 result[12], result[13], result[14], result[15],
-                     (NSUInteger)(arc4random() % NSUIntegerMax)];  
+                     (NSUInteger)(arc4random() % NSUIntegerMax)];
+      
+        CFRelease(cfstring);
     }
     
-    // Call to other developers in the Open Source community:
-    //
-    // feel free to suggest better or alternative "UDID" generation code above.
-    // NOTE that the goal is NOT to find a better hash method, but rather, find a decentralized (i.e. not web-based)
-    // 160 bits / 20 bytes random string generator with the fewest possible collisions.
-    // 
-
     return _openUDID;
 }
 
